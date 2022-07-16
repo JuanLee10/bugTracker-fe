@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Fragment, useState } from "react";
+import {BASE_URL} from "../constants";
 
 const InputTodo = () => {
   const [description, setDescription] = useState("");
@@ -7,7 +8,7 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await axios.post("/todos", {
+      const response = await axios.post(`${BASE_URL}/todos`, {
         description 
       });
       

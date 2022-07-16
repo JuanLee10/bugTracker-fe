@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Fragment, useState } from "react";
+import {BASE_URL} from "../constants";
 
 const EditTodo = ({ todo }) => {
   const [description, setDescription] = useState(todo.description);
@@ -13,7 +14,7 @@ const EditTodo = ({ todo }) => {
 
         //proxy 
 
-        const response = await axios.put(`/todos/${todo.tid}`, {
+        const response = await axios.put(`${BASE_URL}/todos/${todo.tid}`, {
             description
         });
        window.location = "/";
